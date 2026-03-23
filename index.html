@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Gurkha — AI Cybersecurity Startup | Cloud-Native AI/ML Solutions</title>
+    <meta name="description" content="Tech Gurkha is an AI-first cybersecurity startup headquartered in Nepal, operating Tech Gurkha LLC in Albuquerque, NM. Cloud-native AI/ML and AI-driven cybersecurity platforms.">
+    <meta name="keywords" content="AI cybersecurity, machine learning, cloud-native startup, AI threat detection, Nepal tech startup, Albuquerque tech">
+    <meta property="og:title" content="Tech Gurkha — AI Cybersecurity Startup">
+    <meta property="og:description" content="Cloud-native AI/ML and AI-driven cybersecurity solutions. Born in Nepal, scaling globally.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techgurkha.tech">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="canonical" href="https://techgurkha.tech">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <path d="M18 2L32 10V26L18 34L4 26V10L18 2Z" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+                        <path d="M18 8L26 12.5V21.5L18 26L10 21.5V12.5L18 8Z" fill="url(#logoGrad)" opacity="0.3"/>
+                        <path d="M18 12L22 14.5V19.5L18 22L14 19.5V14.5L18 12Z" fill="url(#logoGrad)"/>
+                        <defs><linearGradient id="logoGrad" x1="4" y1="2" x2="32" y2="34"><stop stop-color="#00f0ff"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient></defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Tech<span class="logo-highlight">Gurkha</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#platform" class="nav-link">Platform</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#cloud" class="nav-link">Infrastructure</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <a href="#contact" class="nav-cta">Get In Touch</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-grid-bg"></div>
+        <div class="hero-radial"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                AI-First Startup · Nepal &amp; USA
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                Next-Gen <span class="gradient-text">AI Cybersecurity</span><br>
+                for a Safer Digital World
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                We build cloud-native AI/ML cybersecurity platforms that detect threats in real-time, 
+                automate incident response, and protect enterprises with intelligent defense systems 
+                designed to scale globally.
+            </p>
+            <div class="hero-actions" data-animate="fade-up" data-delay="300">
+                <a href="#platform" class="btn btn-primary">
+                    <span>Explore Our Platform</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#about" class="btn btn-ghost">
+                    <span>Our Story</span>
+                </a>
+            </div>
+            <div class="hero-stats" data-animate="fade-up" data-delay="400">
+                <div class="stat">
+                    <span class="stat-number">Cloud-Native</span>
+                    <span class="stat-label">Architecture</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">&lt;50ms</span>
+                    <span class="stat-label">Threat Response</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Detection Accuracy</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Countries</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual" data-animate="fade-left" data-delay="200">
+            <div class="neural-network" id="neuralNetwork">
+                <canvas id="neuralCanvas"></canvas>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Banner -->
+    <section class="cloud-banner">
+        <div class="section-container">
+            <div class="banner-content" data-animate="fade-up">
+                <p class="banner-label">Powered By</p>
+                <div class="cloud-logos">
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/><circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.3"/></svg>
+                        <span>Google Cloud</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="8" rx="2" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/><circle cx="8" cy="12" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                        <span>Vertex AI</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M8 4h8l4 4H4l4-4z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/></svg>
+                        <span>BigQuery</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/></svg>
+                        <span>Kubernetes Engine</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/></svg>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/></svg>
+                        <span>Python</span>
+                    </div>
+                    <div class="cloud-logo-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6l8-4z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/></svg>
+                        <span>Zero-Trust Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform / Problem-Solution -->
+    <section class="platform" id="platform">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">The Problem We Solve</span>
+                <h2 class="section-title">Traditional Cybersecurity is <span class="gradient-text">Broken</span></h2>
+                <p class="section-subtitle">Legacy security tools are reactive, rule-based, and can't keep pace with AI-powered attacks. We're changing that.</p>
+            </div>
+            <div class="problem-solution-grid">
+                <div class="problem-card" data-animate="fade-up" data-delay="0">
+                    <div class="ps-label problem-label">The Problem</div>
+                    <div class="ps-items">
+                        <div class="ps-item"><span class="ps-icon problem-icon">✕</span><div><h4>Rule-Based Detection</h4><p>Traditional SIEM systems rely on static rules — they miss novel attack vectors and zero-day exploits</p></div></div>
+                        <div class="ps-item"><span class="ps-icon problem-icon">✕</span><div><h4>Alert Fatigue</h4><p>Security teams drown in thousands of false-positive alerts daily, missing real threats in the noise</p></div></div>
+                        <div class="ps-item"><span class="ps-icon problem-icon">✕</span><div><h4>Slow Incident Response</h4><p>Average breach detection takes 197 days — attackers move faster than manual investigation allows</p></div></div>
+                        <div class="ps-item"><span class="ps-icon problem-icon">✕</span><div><h4>Prohibitive Cost</h4><p>Enterprise security platforms cost $500K+/year, leaving SMBs and startups unprotected</p></div></div>
+                    </div>
+                </div>
+                <div class="solution-card" data-animate="fade-up" data-delay="150">
+                    <div class="ps-label solution-label">Our Solution</div>
+                    <div class="ps-items">
+                        <div class="ps-item"><span class="ps-icon solution-icon">✓</span><div><h4>AI-First Threat Detection</h4><p>Deep learning models trained on millions of threat patterns detect zero-days and novel attacks in real-time</p></div></div>
+                        <div class="ps-item"><span class="ps-icon solution-icon">✓</span><div><h4>Intelligent Alert Triage</h4><p>ML-powered correlation reduces noise by 95%, surfacing only actionable, high-confidence threats</p></div></div>
+                        <div class="ps-item"><span class="ps-icon solution-icon">✓</span><div><h4>Automated Response</h4><p>Sub-50ms automated containment and remediation — neutralize threats before damage is done</p></div></div>
+                        <div class="ps-item"><span class="ps-icon solution-icon">✓</span><div><h4>Cloud-Native Scalability</h4><p>Pay-as-you-grow cloud infrastructure makes enterprise-grade security accessible to organizations of all sizes</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Our AI Products &amp; Services</span>
+                <h2 class="section-title">Intelligent <span class="gradient-text">Security Suite</span></h2>
+                <p class="section-subtitle">A comprehensive ecosystem of AI-powered cybersecurity and ML products, built on scalable cloud-native infrastructure.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4z" stroke="url(#svc1)" stroke-width="2" fill="none"/><path d="M14 20l4 4 8-8" stroke="url(#svc1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="svc1" x1="4" y1="4" x2="36" y2="36"><stop stop-color="#00f0ff"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">Core Product</div>
+                    <h3 class="service-title">GurkhaShield AI</h3>
+                    <p class="service-desc">Our flagship AI threat detection engine — real-time deep learning models that identify zero-day exploits, APTs, and anomalous behaviors before they escalate.</p>
+                    <div class="service-tech"><span class="tech-tag">Vertex AI</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">BigQuery</span></div>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="6" y="6" width="28" height="28" rx="4" stroke="url(#svc2)" stroke-width="2" fill="none"/><path d="M13 20h14M20 13v14" stroke="url(#svc2)" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="13" r="2" fill="url(#svc2)"/><circle cx="27" cy="13" r="2" fill="url(#svc2)"/><circle cx="13" cy="27" r="2" fill="url(#svc2)"/><circle cx="27" cy="27" r="2" fill="url(#svc2)"/><defs><linearGradient id="svc2" x1="6" y1="6" x2="34" y2="34"><stop stop-color="#7b2ff7"/><stop offset="1" stop-color="#ff2d87"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">ML Platform</div>
+                    <h3 class="service-title">Custom ML Pipelines</h3>
+                    <p class="service-desc">End-to-end machine learning solutions — from data engineering to model training and production deployment with full MLOps automation.</p>
+                    <div class="service-tech"><span class="tech-tag">Vertex AI Pipelines</span><span class="tech-tag">GKE</span><span class="tech-tag">Cloud Run</span></div>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 6L33 14v12L20 34 7 26V14L20 6z" stroke="url(#svc3)" stroke-width="2" fill="none"/><path d="M20 6v28M7 14l13 6 13-6" stroke="url(#svc3)" stroke-width="1.5" opacity="0.5"/><defs><linearGradient id="svc3" x1="7" y1="6" x2="33" y2="34"><stop stop-color="#00f0ff"/><stop offset="1" stop-color="#00ff88"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">Security Platform</div>
+                    <h3 class="service-title">AI-SIEM Platform</h3>
+                    <p class="service-desc">Cloud-native SIEM with AI-powered log analysis, automated incident correlation, and intelligent vulnerability management at scale.</p>
+                    <div class="service-tech"><span class="tech-tag">Chronicle SIEM</span><span class="tech-tag">Pub/Sub</span><span class="tech-tag">Cloud Functions</span></div>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="url(#svc4)" stroke-width="2" fill="none"/><path d="M12 20c0-4.4 3.6-8 8-8" stroke="url(#svc4)" stroke-width="2" stroke-linecap="round"/><path d="M28 20c0 4.4-3.6 8-8 8" stroke="url(#svc4)" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="url(#svc4)" opacity="0.4"/><defs><linearGradient id="svc4" x1="6" y1="6" x2="34" y2="34"><stop stop-color="#ff2d87"/><stop offset="1" stop-color="#ff8c00"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">Offensive Security</div>
+                    <h3 class="service-title">AI Pen Testing</h3>
+                    <p class="service-desc">AI-augmented penetration testing that simulates sophisticated attack vectors — using generative AI to discover vulnerabilities traditional scanners miss.</p>
+                    <div class="service-tech"><span class="tech-tag">Gemini API</span><span class="tech-tag">Cloud Security</span><span class="tech-tag">Automation</span></div>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 28V12a4 4 0 014-4h16a4 4 0 014 4v16a4 4 0 01-4 4H12a4 4 0 01-4-4z" stroke="url(#svc5)" stroke-width="2" fill="none"/><path d="M15 18l3 3 7-7" stroke="url(#svc5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="svc5" x1="8" y1="8" x2="32" y2="32"><stop stop-color="#00ff88"/><stop offset="1" stop-color="#00f0ff"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">Compliance</div>
+                    <h3 class="service-title">Compliance &amp; Risk AI</h3>
+                    <p class="service-desc">Automated compliance monitoring with NLP-powered regulatory parsing, intelligent risk scoring, and continuous audit workflows.</p>
+                    <div class="service-tech"><span class="tech-tag">Document AI</span><span class="tech-tag">BigQuery</span><span class="tech-tag">Cloud DLP</span></div>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8a12 12 0 110 24 12 12 0 010-24z" stroke="url(#svc6)" stroke-width="2" fill="none"/><path d="M20 8c-3.3 0-6 5.4-6 12s2.7 12 6 12" stroke="url(#svc6)" stroke-width="1.5" fill="none"/><path d="M8 20h24" stroke="url(#svc6)" stroke-width="1.5"/><defs><linearGradient id="svc6" x1="8" y1="8" x2="32" y2="32"><stop stop-color="#7b2ff7"/><stop offset="1" stop-color="#00f0ff"/></linearGradient></defs></svg>
+                    </div>
+                    <div class="service-badge">AI/ML</div>
+                    <h3 class="service-title">NLP &amp; Computer Vision</h3>
+                    <p class="service-desc">Advanced NLP and computer vision — document intelligence, threat image analysis, phishing detection, and conversational security bots.</p>
+                    <div class="service-tech"><span class="tech-tag">Gemini</span><span class="tech-tag">Vision AI</span><span class="tech-tag">Natural Language AI</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Infrastructure -->
+    <section class="cloud-section" id="cloud">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Infrastructure</span>
+                <h2 class="section-title">Cloud-Native <span class="gradient-text">Architecture</span></h2>
+                <p class="section-subtitle">Our platform is architected cloud-native from the ground up, leveraging Google Cloud's AI/ML infrastructure for scalability, performance, and reliability.</p>
+            </div>
+            <div class="architecture-grid">
+                <div class="arch-layer" data-animate="fade-up" data-delay="0">
+                    <div class="arch-layer-header">
+                        <div class="arch-icon cyan"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6l8-4z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+                        <h3>AI/ML Layer</h3>
+                    </div>
+                    <p class="arch-desc">Model training, serving, and optimization</p>
+                    <div class="arch-items">
+                        <div class="arch-item"><span class="arch-dot"></span><span>Vertex AI — Model training &amp; AutoML</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>TensorFlow / JAX on Cloud TPUs</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Vertex AI Pipelines — MLOps</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Gemini API — Foundation models</span></div>
+                    </div>
+                </div>
+                <div class="arch-layer" data-animate="fade-up" data-delay="100">
+                    <div class="arch-layer-header">
+                        <div class="arch-icon purple"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+                        <h3>Data Layer</h3>
+                    </div>
+                    <p class="arch-desc">Real-time data ingestion, processing, and analytics</p>
+                    <div class="arch-items">
+                        <div class="arch-item"><span class="arch-dot"></span><span>BigQuery — Petabyte-scale analytics</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Pub/Sub — Real-time event streaming</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Dataflow — Stream processing</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Cloud Storage — Data lake</span></div>
+                    </div>
+                </div>
+                <div class="arch-layer" data-animate="fade-up" data-delay="200">
+                    <div class="arch-layer-header">
+                        <div class="arch-icon green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+                        <h3>Security Layer</h3>
+                    </div>
+                    <p class="arch-desc">Zero-trust infrastructure and threat intelligence</p>
+                    <div class="arch-items">
+                        <div class="arch-item"><span class="arch-dot"></span><span>Security Command Center</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Chronicle SIEM &amp; SOAR</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Cloud Armor &amp; Cloud DLP</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Identity-Aware Proxy (IAP)</span></div>
+                    </div>
+                </div>
+                <div class="arch-layer" data-animate="fade-up" data-delay="300">
+                    <div class="arch-layer-header">
+                        <div class="arch-icon pink"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 8h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 4h8l4 4H4l4-4z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div>
+                        <h3>Compute Layer</h3>
+                    </div>
+                    <p class="arch-desc">Containerized microservices and serverless functions</p>
+                    <div class="arch-items">
+                        <div class="arch-item"><span class="arch-dot"></span><span>Google Kubernetes Engine (GKE)</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Cloud Run — Serverless containers</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Cloud Functions — Event-driven</span></div>
+                        <div class="arch-item"><span class="arch-dot"></span><span>Artifact Registry &amp; Cloud Build</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cloud-why" data-animate="fade-up" data-delay="100">
+                <h3>Why We Chose Google Cloud</h3>
+                <div class="cloud-why-grid">
+                    <div class="cloud-why-item">
+                        <span class="cloud-why-number">1</span>
+                        <div><h4>Best-in-Class AI/ML</h4><p>Vertex AI, TPUs, and Gemini provide the most advanced infrastructure for training and deploying our cybersecurity models at scale.</p></div>
+                    </div>
+                    <div class="cloud-why-item">
+                        <span class="cloud-why-number">2</span>
+                        <div><h4>Security-First DNA</h4><p>Google's zero-trust BeyondCorp framework, Chronicle SIEM, and Security Command Center align perfectly with our security mission.</p></div>
+                    </div>
+                    <div class="cloud-why-item">
+                        <span class="cloud-why-number">3</span>
+                        <div><h4>Global Scale</h4><p>40+ regions worldwide enable us to deploy low-latency threat detection infrastructure close to customers everywhere.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag" data-animate="fade-up">Our Story</span>
+                    <h2 class="section-title" data-animate="fade-up" data-delay="50">
+                        AI Startup from the<br><span class="gradient-text">Himalayas</span>
+                    </h2>
+                    <p class="about-text" data-animate="fade-up" data-delay="100">
+                        Tech Gurkha is an AI-first cybersecurity startup born in Nepal — the land of Gurkhas, legendary for their relentless courage and resilience. We bring that warrior spirit to the digital frontier.
+                    </p>
+                    <p class="about-text" data-animate="fade-up" data-delay="150">
+                        Headquartered in Kathmandu (<strong>techgurkha.com.np</strong>) with our US entity Tech Gurkha LLC based in Albuquerque, New Mexico (<strong>techgurkha.tech</strong>), we bridge Himalayan innovation with global enterprise needs. Our team of AI researchers, cloud architects, and cybersecurity engineers are building the future of intelligent security on cloud-native infrastructure.
+                    </p>
+                    <div class="about-values" data-animate="fade-up" data-delay="200">
+                        <div class="value"><div class="value-icon">🚀</div><div><h4>Startup Velocity</h4><p>Moving fast, shipping AI products, iterating with real customers</p></div></div>
+                        <div class="value"><div class="value-icon">☁️</div><div><h4>Cloud-Native DNA</h4><p>100% cloud-native architecture — serverless, scalable, secure</p></div></div>
+                        <div class="value"><div class="value-icon">🛡️</div><div><h4>Security Mission</h4><p>Making enterprise-grade AI security accessible to everyone</p></div></div>
+                        <div class="value"><div class="value-icon">🌏</div><div><h4>Global-Local Model</h4><p>Nepal R&amp;D + US market — cost-efficient with world-class talent</p></div></div>
+                    </div>
+                </div>
+                <div class="about-visual" data-animate="fade-left" data-delay="100">
+                    <div class="about-card-stack">
+                        <div class="floating-card card-1">
+                            <div class="card-header"><span class="card-dot green"></span><span class="card-label">gurkha_shield.py</span></div>
+                            <pre class="card-code"><code><span class="code-keyword">from</span> google.cloud <span class="code-keyword">import</span> aiplatform
+
+<span class="code-keyword">class</span> <span class="code-class">GurkhaShield</span>:
+    <span class="code-keyword">def</span> <span class="code-func">detect_threats</span>(self, traffic):
+        endpoint = aiplatform.<span class="code-func">Endpoint</span>(
+            endpoint_name=<span class="code-string">"threat-model-v3"</span>
+        )
+        <span class="code-keyword">return</span> endpoint.<span class="code-func">predict</span>(traffic)</code></pre>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-header"><span class="card-dot blue"></span><span class="card-label">Model Performance</span></div>
+                            <div class="card-metrics">
+                                <div class="metric"><span class="metric-value">99.7%</span><span class="metric-label">Detection Rate</span></div>
+                                <div class="metric"><span class="metric-value">&lt;50ms</span><span class="metric-label">Inference</span></div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-header"><span class="card-dot red"></span><span class="card-label">Cluster Status</span></div>
+                            <div class="card-status">
+                                <div class="status-row"><span class="status-indicator active"></span><span>All pods healthy — 12/12</span></div>
+                                <div class="status-row"><span class="status-indicator active"></span><span>ML endpoint: serving</span></div>
+                                <div class="status-row"><span class="status-indicator warning"></span><span>3 threats auto-mitigated</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence -->
+    <section class="global" id="global">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Global Presence</span>
+                <h2 class="section-title">Two Nations, <span class="gradient-text">One Mission</span></h2>
+                <p class="section-subtitle">An AI startup model built for global scale — Himalayan R&amp;D combined with American market reach.</p>
+            </div>
+            <div class="global-grid">
+                <div class="location-card" data-animate="fade-up" data-delay="0">
+                    <div class="location-flag">🇳🇵</div>
+                    <h3 class="location-title">Nepal — R&amp;D Headquarters</h3>
+                    <p class="location-domain">techgurkha.com.np</p>
+                    <p class="location-desc">Our engineering and AI research hub in Kathmandu. Home to our core team of ML engineers, security researchers, and cloud architects building the next generation of AI cybersecurity.</p>
+                    <div class="location-tags"><span class="tag">AI Research</span><span class="tag">Engineering</span><span class="tag">Cloud Architecture</span><span class="tag">Product Dev</span></div>
+                </div>
+                <div class="location-card" data-animate="fade-up" data-delay="150">
+                    <div class="location-flag">🇺🇸</div>
+                    <h3 class="location-title">USA — Tech Gurkha LLC</h3>
+                    <p class="location-domain">techgurkha.tech</p>
+                    <p class="location-address">1209 Mountain Road Pl NE, Ste R · Albuquerque, NM 87110</p>
+                    <p class="location-desc">Our US entity for enterprise partnerships, customer success, and North American market expansion. Strategic hub for cloud partnerships and go-to-market.</p>
+                    <div class="location-tags"><span class="tag">Enterprise Sales</span><span class="tag">Partnerships</span><span class="tag">Customer Success</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traction -->
+    <section class="traction">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Startup Traction</span>
+                <h2 class="section-title">Building with <span class="gradient-text">Momentum</span></h2>
+            </div>
+            <div class="traction-grid" data-animate="fade-up" data-delay="100">
+                <div class="traction-card"><div class="traction-number">2</div><div class="traction-label">Registered Entities</div><div class="traction-detail">Nepal HQ + US LLC</div></div>
+                <div class="traction-card"><div class="traction-number">100%</div><div class="traction-label">Cloud-Native</div><div class="traction-detail">Built on Google Cloud Platform</div></div>
+                <div class="traction-card"><div class="traction-number">AI/ML</div><div class="traction-label">Core Focus</div><div class="traction-detail">Cybersecurity + AI intersection</div></div>
+                <div class="traction-card"><div class="traction-number">Global</div><div class="traction-label">Market Scope</div><div class="traction-detail">Nepal R&amp;D → US + international</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Our Edge</span>
+                <h2 class="section-title">Why <span class="gradient-text">Tech Gurkha</span></h2>
+            </div>
+            <div class="features-row">
+                <div class="feature" data-animate="fade-up" data-delay="0"><div class="feature-number">01</div><h4 class="feature-title">AI-Native, Not AI-Washed</h4><p>Every product is built with AI/ML at the core from day one — not a legacy tool with AI marketing slapped on.</p></div>
+                <div class="feature" data-animate="fade-up" data-delay="100"><div class="feature-number">02</div><h4 class="feature-title">Cloud-Native Infrastructure</h4><p>Built entirely on Google Cloud — Vertex AI, BigQuery, GKE, Chronicle. Enterprise-grade infrastructure from day one.</p></div>
+                <div class="feature" data-animate="fade-up" data-delay="200"><div class="feature-number">03</div><h4 class="feature-title">Gurkha Resilience</h4><p>Like the legendary Gurkha warriors, our systems are built to be resilient, adaptive, and relentless against evolving threats.</p></div>
+                <div class="feature" data-animate="fade-up" data-delay="300"><div class="feature-number">04</div><h4 class="feature-title">Cost-Efficient Global Model</h4><p>Nepal-based R&amp;D delivers world-class AI talent at a fraction of the cost, with US presence for enterprise credibility.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact — No Form, Just Info -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="contact-centered">
+                <span class="section-tag" data-animate="fade-up">Get In Touch</span>
+                <h2 class="section-title" data-animate="fade-up" data-delay="50">Let's Build the <span class="gradient-text">Future Together</span></h2>
+                <p class="contact-text" data-animate="fade-up" data-delay="100">Whether you need AI-powered cybersecurity, custom ML solutions, or want to explore a partnership — reach out to us.</p>
+                <div class="contact-cards" data-animate="fade-up" data-delay="200">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 7l9 5 9-5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p class="contact-card-value">info@techgurkha.com.np</p>
+                        <p class="contact-card-sub">We typically respond within 24 hours</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                        </div>
+                        <h3>US Office</h3>
+                        <p class="contact-card-value">1209 Mountain Road Pl NE, Ste R</p>
+                        <p class="contact-card-sub">Albuquerque, NM 87110</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12h20M12 2c-2.8 3.2-4 6.5-4 10s1.2 6.8 4 10c2.8-3.2 4-6.5 4-10s-1.2-6.8-4-10z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                        </div>
+                        <h3>On the Web</h3>
+                        <p class="contact-card-value">techgurkha.tech</p>
+                        <p class="contact-card-sub">techgurkha.com.np</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <div class="logo-icon">
+                            <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><path d="M18 2L32 10V26L18 34L4 26V10L18 2Z" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/><path d="M18 12L22 14.5V19.5L18 22L14 19.5V14.5L18 12Z" fill="url(#logoGrad2)"/><defs><linearGradient id="logoGrad2" x1="4" y1="2" x2="32" y2="34"><stop stop-color="#00f0ff"/><stop offset="1" stop-color="#7b2ff7"/></linearGradient></defs></svg>
+                        </div>
+                        <span class="logo-text">Tech<span class="logo-highlight">Gurkha</span></span>
+                    </a>
+                    <p class="footer-desc">AI-powered cybersecurity startup. Born in Nepal, scaling globally with cloud-native infrastructure.</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h4>Products</h4>
+                        <a href="#services">GurkhaShield AI</a>
+                        <a href="#services">ML Pipelines</a>
+                        <a href="#services">AI-SIEM Platform</a>
+                        <a href="#services">AI Pen Testing</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#cloud">Infrastructure</a>
+                        <a href="#global">Global Presence</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://techgurkha.tech" target="_blank" rel="noopener noreferrer">techgurkha.tech</a>
+                        <a href="https://techgurkha.com.np" target="_blank" rel="noopener noreferrer">techgurkha.com.np</a>
+                        <a href="mailto:info@techgurkha.com.np">info@techgurkha.com.np</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Gurkha LLC. All rights reserved.</p>
+                <p>1209 Mountain Road Pl NE, Ste R, Albuquerque, NM 87110</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
